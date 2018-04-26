@@ -1,0 +1,66 @@
+Last login: Thu Apr 26 14:08:30 on ttys003
+
+~/projects/deploy/multi-deploy/backend/app master
+fc-front-deploy ❯ ..
+
+~/projects/deploy/multi-deploy/backend master
+fc-front-deploy ❯ ..
+
+~/projects/deploy/multi-deploy
+❯ cd frontend
+
+~/projects/deploy/multi-deploy/frontend
+❯ git init
+Initialized empty Git repository in /Users/archomai/projects/deploy/multi-deploy/frontend/.git/
+
+~/projects/deploy/multi-deploy/frontend master*
+❯ git add -A
+
+~/projects/deploy/multi-deploy/frontend master*
+❯ git commit -m 'first commit'
+[master (root-commit) 19c5474] first commit
+ 19 files changed, 10485 insertions(+)
+ create mode 100644 .editorconfig
+ create mode 100644 .eslintrc.js
+ ① .gitignore                                                                                     Buffers
+  3 # IntelliJ
+  2 /out/
+  1
+95  # mpeltonen/sbt-idea plugin
+  1 .idea_modules/
+  2
+  3 # JIRA plugin
+  4 atlassian-ide-plugin.xml
+  5
+  6 # Cursive Clojure plugin
+  7 .idea/replstate.xml
+  8
+  9 # Ruby plugin and RubyMine
+ 10 /.rakeTasks
+ 11
+ 12 # Crashlytics plugin (for Android Studio and IntelliJ)
+ 13 com_crashlytics_export_strings.xml
+ 14 crashlytics.properties
+ 15 crashlytics-build.properties
+ 16 fabric.properties
+ 17
+ 18 ### PyCharm+all Patch ###
+ 19 # Ignores the whole .idea folder and all .iml files
+ 20 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/
+    issues/360
+ 21
+ 22 .idea/
+ 23
+ 24 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
+ 25
+ 26 *.iml
+ 27 modules.xml
+ 28 .idea/misc.xml
+ 29 *.ipr
+ 30
+ 31 ### Python ###
+ 32 # Byte-compiled / optimized / DLL files
+ 33 *.py[cod]
+ 34 *$py.class
+ ❶  * .gitignore  ❖ ⓢ    master                                                | utf-8  95:28  21%
+
