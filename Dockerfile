@@ -9,7 +9,24 @@ COPY      . /srv/backend
 WORKDIR   /srv/backend
 RUN       pip install -r requirements.txt
 
-WORKDIR   /srv/backend/app
-CMD       python manage.py runserver 0:8000
+# Nginx settings
+RUN       rm -rf /etc/nginx/sites-enabled/*
 
-EXPOSE    8000
+# Copy Nginx conf
+RUN       cp /srv/backend/.config/nginx.conf \
+              /etc/nginx/nginx.conf
+
+# Copy nginx-app.conf
+RUN       cp /srv/backend/.config/nginx-app.conf \
+              /etc/nginx/sites-available/
+RUN       ln -sf /etc/nginx/sites-available/nginx-app.conf \
+                /etc/nginx/sites-enabled/nginx-app.conf
+
+# Copy supervisord conf
+RUN       cp -f /srv/backend/.config/supervisord.conf \
+                /etc/supervisor/conf.d/
+
+# Stop nginx, run supervisor
+CMD       pkill nginx; supervisord -n
+
+EXPOSE    80
